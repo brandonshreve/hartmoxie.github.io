@@ -12,11 +12,28 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link to="/" className="text-3xl font-bold">
+              <Link to="/" className="text-3xl md:text-4xl font-bold">
                 <motion.span
-                  className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent"
+                  style={{
+                    backgroundSize: '200% auto',
+                    animation: 'gradient 8s ease infinite',
+                  }}
+                  whileHover={{
+                    scale: 1.02,
+                    backgroundPosition: ["0% 50%", "200% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "linear",
+                    scale: {
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 20
+                    }
+                  }}
                 >
                   Marissa Hart
                 </motion.span>
