@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
+    { name: 'Resume', path: '/resume' },
     { name: 'Learning Design', path: '/learning-design' },
     { name: 'Technical Writing', path: '/technical-writing' },
     { name: 'Graphic Design', path: '/graphic-design' },

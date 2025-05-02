@@ -8,6 +8,7 @@ import LearningDesign from './pages/LearningDesign';
 import TechnicalWriting from './pages/TechnicalWriting';
 import GraphicDesign from './pages/GraphicDesign';
 import Contact from './pages/Contact';
+import Resume from './pages/Resume';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -23,6 +24,16 @@ const AnimatedRoutes: React.FC = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <Home />
+          </motion.div>
+        } />
+        <Route path="/resume" element={
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <Resume />
           </motion.div>
         } />
         <Route path="/learning-design" element={
