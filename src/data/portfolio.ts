@@ -1,4 +1,4 @@
-import { MediaItem } from '../components/Portfolio';
+import { MediaItem } from '../components/PortfolioSection';
 
 export interface Project {
   id: string;

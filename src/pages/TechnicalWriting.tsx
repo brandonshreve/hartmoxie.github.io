@@ -1,43 +1,16 @@
 import React from 'react';
-import Portfolio from '../components/Portfolio';
+import { useParams } from 'react-router-dom';
+import PortfolioSection from '../components/PortfolioSection';
+import { portfolioData } from '../data/portfolio';
 
 const TechnicalWriting: React.FC = () => {
-  const portfolioData = {
-    title: 'Technical Writing',
-    subtitle: 'Simplifying Complex Concepts Through Clear Documentation',
-    description: 'A showcase of technical writing projects that demonstrate my ability to transform complex technical information into clear, accessible, and engaging content. These projects highlight my expertise in creating user-friendly documentation, technical guides, and instructional materials.',
-    role: 'Technical Writer',
-    timeline: '2019 - Present',
-    skills: [
-      'Technical Documentation',
-      'API Documentation',
-      'User Guides',
-      'Content Strategy',
-      'Information Architecture',
-      'Technical Editing'
-    ],
-    media: [
-      {
-        type: 'image' as const,
-        url: 'https://placehold.co/1200x600/930045/ffffff?text=API+Documentation',
-        alt: 'API Documentation Example',
-        caption: 'API Documentation - Clear and Structured Technical Content'
-      },
-      {
-        type: 'image' as const,
-        url: 'https://placehold.co/1200x600/009345/ffffff?text=User+Guide',
-        alt: 'User Guide Example',
-        caption: 'User Guide - Step-by-Step Instructions with Visual Aids'
-      },
-      {
-        type: 'document' as const,
-        url: '/documents/technical-writing-sample.pdf',
-        caption: 'Technical Writing Sample - Complex System Documentation'
-      }
-    ]
-  };
+  const section = portfolioData.find(s => s.id === 'technical-writing');
+  
+  if (!section) {
+    return <div>Section not found</div>;
+  }
 
-  return <Portfolio {...portfolioData} />;
+  return <PortfolioSection section={section} />;
 };
 
 export default TechnicalWriting; 

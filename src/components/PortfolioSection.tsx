@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { PortfolioSection as PortfolioSectionType, Project } from '../data/portfolio';
 
+export interface MediaItem {
+  type: 'image' | 'video' | 'document';
+  url: string;
+  alt?: string;
+  caption?: string | React.ReactNode;
+  link?: string;
+}
+
 interface PortfolioSectionProps {
   section: PortfolioSectionType;
 }
