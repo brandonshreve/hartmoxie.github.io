@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Learning Experience Design', path: '/learning-design' },
@@ -13,10 +22,15 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="fixed w-full bg-white shadow-md z-50">
-      <nav className="container mx-auto px-6 py-3">
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+    }`}>
+      <nav className="container mx-auto px-6 py-4 bg-white">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold text-primary">
+          <Link 
+            to="/" 
+            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+          >
             Marissa Hart
           </Link>
           
@@ -24,22 +38,20 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
             >
-              <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                {isOpen ? (
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                  />
-                ) : (
-                  <path
-                    fillRule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                  />
-                )}
-              </svg>
+              <div className="w-6 h-6 relative flex items-center justify-center">
+                <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+                  isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
+                }`} />
+                <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+                  isOpen ? 'opacity-0' : 'opacity-100'
+                }`} />
+                <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+                  isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
+                }`} />
+              </div>
             </button>
           </div>
 
@@ -49,25 +61,30 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-primary hover:text-secondary transition-colors ${
-                  location.pathname === item.path ? 'font-bold' : ''
+                className={`relative text-gray-700 hover:text-primary transition-colors ${
+                  location.pathname === item.path ? 'text-primary font-medium' : ''
                 }`}
               >
                 {item.name}
+                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform duration-300 ${
+                  location.pathname === item.path ? 'scale-x-100' : 'group-hover:scale-x-100'
+                }`} />
               </Link>
             ))}
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="py-4 space-y-6 bg-white">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block px-3 py-2 text-primary hover:text-secondary transition-colors ${
-                  location.pathname === item.path ? 'font-bold' : ''
+                className={`block text-2xl text-gray-700 hover:text-primary transition-colors ${
+                  location.pathname === item.path ? 'text-primary font-medium' : ''
                 }`}
                 onClick={() => setIsOpen(false)}
               >
