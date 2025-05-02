@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,7 +8,6 @@ import LearningDesign from './pages/LearningDesign';
 import TechnicalWriting from './pages/TechnicalWriting';
 import GraphicDesign from './pages/GraphicDesign';
 import Contact from './pages/Contact';
-import { motion } from 'framer-motion';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();

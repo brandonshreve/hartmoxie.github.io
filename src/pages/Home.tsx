@@ -65,10 +65,15 @@ const Home: React.FC = () => {
             >
               <span className="font-semibold text-white">UX Designer</span> & <span className="font-semibold text-white">Learning Experience Designer</span> crafting exceptional digital experiences
             </motion.p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <motion.a
                 href="#featured-work"
-                className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -76,13 +81,13 @@ const Home: React.FC = () => {
               </motion.a>
               <motion.a
                 href="/contact"
-                className="px-6 py-3 border border-white/30 bg-primary/10 text-white rounded-lg hover:bg-primary/20 hover:border-white transition-colors"
+                className="px-6 py-3 border border-white/30 bg-white/10 text-white rounded-lg hover:bg-white/20 hover:border-white transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Get in Touch
               </motion.a>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -90,16 +95,31 @@ const Home: React.FC = () => {
       {/* Featured Work Section */}
       <section id="featured-work" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="section-title text-center mb-16">Featured Work</h2>
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-16 text-gray-900"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Featured Work
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioItems.map((item, index) => (
-              <Card
+              <motion.div
                 key={index}
-                title={item.title}
-                description={item.description}
-                link={item.link}
-                imageUrl={item.imageUrl}
-              />
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card
+                  title={item.title}
+                  description={item.description}
+                  link={item.link}
+                  imageUrl={item.imageUrl}
+                />
+              </motion.div>
             ))}
           </div>
         </div>
