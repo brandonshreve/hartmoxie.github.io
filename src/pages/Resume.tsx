@@ -13,11 +13,16 @@ const Resume: React.FC = () => {
         >
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Resume</h1>
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <iframe
-              src="public/resume.pdf"
+            <object
+              data="/resume.pdf"
+              type="application/pdf"
               className="w-full h-[calc(100vh-12rem)]"
-              title="Resume PDF Viewer"
-            />
+            >
+              <p className="p-4 text-gray-600">
+                It appears you don't have a PDF plugin for this browser.
+                You can <a href="/resume.pdf" className="text-primary hover:underline">click here to download the PDF file</a>.
+              </p>
+            </object>
           </div>
         </motion.div>
       </div>
