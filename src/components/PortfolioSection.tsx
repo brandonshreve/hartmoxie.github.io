@@ -25,7 +25,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
   }));
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
+    <div className="min-h-screen bg-gray-50 py-28">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

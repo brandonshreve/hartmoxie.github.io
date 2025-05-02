@@ -16,6 +16,7 @@ const Navbar: React.FC = () => {
     };
 
     if (isHomePage) {
+      setIsScrolled(window.scrollY > 50);
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     } else {
@@ -24,14 +25,14 @@ const Navbar: React.FC = () => {
   }, [isHomePage]);
 
   return (
-    <nav className={`fixed w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-lg' : isHomePage ? 'bg-transparent' : 'bg-white shadow-lg'}`}>
       <div className="container mx-auto px-6">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="text-3xl md:text-4xl font-bold">
                 <motion.span
-                  className={`bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent ${isScrolled ? '' : 'text-white'}`}
+                  className={`bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text ${isScrolled ? 'text-transparent' : isHomePage ? 'text-white' : 'text-transparent'}`}
                   animate={{
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                   }}
@@ -60,20 +61,20 @@ const Navbar: React.FC = () => {
                 <Link
                   key={section.id}
                   to={`/portfolio/${section.id}`}
-                  className={`border-transparent ${isScrolled ? 'text-gray-500 hover:text-primary' : 'text-white/90 hover:text-white'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                  className={`border-transparent ${isScrolled ? 'text-gray-500 hover:text-primary' : isHomePage ? 'text-white/90 hover:text-white' : 'text-gray-500 hover:text-primary'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
                 >
                   {section.title}
                 </Link>
               ))}
               <Link
                 to="/resume"
-                className={`border-transparent ${isScrolled ? 'text-gray-500 hover:text-primary' : 'text-white/90 hover:text-white'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`border-transparent ${isScrolled ? 'text-gray-500 hover:text-primary' : isHomePage ? 'text-white/90 hover:text-white' : 'text-gray-500 hover:text-primary'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 Resume
               </Link>
               <Link
                 to="/contact"
-                className={`border-transparent ${isScrolled ? 'text-gray-500 hover:text-primary' : 'text-white/90 hover:text-white'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
+                className={`border-transparent ${isScrolled ? 'text-gray-500 hover:text-primary' : isHomePage ? 'text-white/90 hover:text-white' : 'text-gray-500 hover:text-primary'} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
               >
                 Contact
               </Link>
@@ -82,7 +83,7 @@ const Navbar: React.FC = () => {
           <div className="-mr-2 flex items-center sm:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md ${isScrolled ? 'text-gray-400 hover:text-gray-500 hover:bg-gray-100' : 'text-white/90 hover:text-white hover:bg-white/10'} focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary`}
+              className={`inline-flex items-center justify-center p-2 rounded-md ${isScrolled ? 'text-gray-400 hover:text-gray-500 hover:bg-gray-100' : isHomePage ? 'text-white/90 hover:text-white hover:bg-white/10' : 'text-gray-400 hover:text-gray-500 hover:bg-gray-100'} focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary`}
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
