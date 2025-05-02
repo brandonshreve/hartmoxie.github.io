@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <header className="fixed w-full bg-white shadow-md z-50">
       <nav className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-primary">Hartmoxie</div>
+          <div className="text-2xl font-bold text-primary">Marissa Hart</div>
           
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -34,22 +34,20 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-primary hover:text-secondary transition-colors">Home</a>
-            <a href="#about" className="text-primary hover:text-secondary transition-colors">About</a>
-            <a href="#portfolio" className="text-primary hover:text-secondary transition-colors">Portfolio</a>
-            <a href="#skills" className="text-primary hover:text-secondary transition-colors">Skills</a>
-            <a href="#contact" className="text-primary hover:text-secondary transition-colors">Contact</a>
+            <a href="#learning-design" className="text-primary hover:text-secondary transition-colors">Learning Experience Design</a>
+            <a href="#technical-writing" className="text-primary hover:text-secondary transition-colors">Technical Writing</a>
+            <a href="#graphic-design" className="text-primary hover:text-secondary transition-colors">Graphic Design</a>
+            <a href="#resume" className="text-primary hover:text-secondary transition-colors">Resume</a>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a href="#home" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Home</a>
-            <a href="#about" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">About</a>
-            <a href="#portfolio" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Portfolio</a>
-            <a href="#skills" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Skills</a>
-            <a href="#contact" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Contact</a>
+            <a href="#learning-design" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Learning Experience Design</a>
+            <a href="#technical-writing" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Technical Writing</a>
+            <a href="#graphic-design" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Graphic Design</a>
+            <a href="#resume" className="block px-3 py-2 text-primary hover:text-secondary transition-colors">Resume</a>
           </div>
         </div>
       </nav>
