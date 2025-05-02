@@ -1,34 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const navItems = [
-    { name: 'Learning Experience Design', path: '/learning-design' },
+    { name: 'Home', path: '/' },
+    { name: 'Learning Design', path: '/learning-design' },
     { name: 'Technical Writing', path: '/technical-writing' },
     { name: 'Graphic Design', path: '/graphic-design' },
-    { name: 'Resume', path: '/resume' }
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
-    }`}>
-      <nav className="container mx-auto px-6 py-4 bg-white">
-        <div className="flex justify-between items-center">
-          <Link to="/">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+      <div className="container mx-auto px-6">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="flex items-center">
             <motion.div
               className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] bg-clip-text text-transparent"
               animate={{
@@ -41,6 +31,7 @@ const Navbar: React.FC = () => {
               transition={{
                 duration: 8,
                 repeat: Infinity,
+                repeatType: "reverse",
                 ease: "linear",
                 scale: {
                   type: "spring",
@@ -52,27 +43,6 @@ const Navbar: React.FC = () => {
               Marissa Hart
             </motion.div>
           </Link>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label="Toggle menu"
-            >
-              <div className="w-6 h-6 relative flex items-center justify-center">
-                <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
-                  isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
-                }`} />
-                <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
-                  isOpen ? 'opacity-0' : 'opacity-100'
-                }`} />
-                <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
-                  isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
-                }`} />
-              </div>
-            </button>
-          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
@@ -80,7 +50,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative text-gray-700 hover:text-primary transition-colors ${
+                className={`relative text-gray-600 hover:text-primary transition-colors ${
                   location.pathname === item.path ? 'text-primary font-medium' : ''
                 }`}
               >
@@ -91,18 +61,37 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 h-6 relative flex items-center justify-center">
+              <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+                isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
+              }`} />
+              <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+                isOpen ? 'opacity-0' : 'opacity-100'
+              }`} />
+              <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+                isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
+              }`} />
+            </div>
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         <div className={`md:hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
-          <div className="py-4 space-y-6 bg-white">
+          <div className="py-4 space-y-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block text-2xl text-gray-700 hover:text-primary transition-colors ${
+                className={`block text-2xl text-gray-600 hover:text-primary transition-colors ${
                   location.pathname === item.path ? 'text-primary font-medium' : ''
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -112,8 +101,8 @@ const Navbar: React.FC = () => {
             ))}
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 };
 
