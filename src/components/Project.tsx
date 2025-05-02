@@ -39,7 +39,20 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{project.title}</h1>
           <p className="text-xl text-primary mb-6">{project.type}</p>
-          <p className="text-lg text-gray-600 max-w-3xl">{project.description}</p>
+          <p className="text-lg text-gray-600 max-w-3xl mb-4">{project.description}</p>
+          {project.externalLink && (
+            <a 
+              href={project.externalLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-lg text-primary hover:underline inline-flex items-center gap-2"
+            >
+              View Project
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
         </motion.div>
 
         {/* Project Details */}
@@ -47,7 +60,7 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
         >
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Role</h3>

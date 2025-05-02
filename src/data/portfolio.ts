@@ -12,6 +12,8 @@ export interface Project {
   role: string;
   timeline: string;
   client?: string;
+  tools?: string[];
+  externalLink?: string;
 }
 
 export interface PortfolioSection {
@@ -194,6 +196,35 @@ export const portfolioData: PortfolioSection[] = [
       'Adobe FrameMaker'
     ],
     projects: [
+      {
+        id: 'sticky-note-printer',
+        title: 'Reset Your Smart Sticky Note Printer',
+        type: 'Troubleshooting Guide',
+        description: 'A comprehensive troubleshooting guide developed to help customers reset their Smart Sticky Note Printer. The guide provides clear, step-by-step instructions with visual aids to ensure users can successfully troubleshoot and reset their device.',
+        media: [
+          {
+            type: 'image',
+            url: '/images/amazon-sticky-printer.jpg',
+            alt: 'Sticky Note Printer Troubleshooting Guide',
+            caption: 'Troubleshooting Guide Screenshot'
+          }
+        ],
+        skills: [
+          'Technical Writing',
+          'User Documentation',
+          'Troubleshooting Guides',
+          'Visual Communication',
+          'Content Organization'
+        ],
+        role: 'Technical Writer',
+        timeline: 'Q2 2023',
+        client: 'Smart Office Solutions',
+        tools: [
+          'Microsoft Word',
+          'SDL Tridion'
+        ],
+        externalLink: 'https://www.amazon.com/gp/help/customer/display.html?nodeId=G4UXV3RG3C9G56UH'
+      },
       {
         id: 'api-documentation',
         title: 'API Documentation',

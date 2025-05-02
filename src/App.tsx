@@ -1,34 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
-import PortfolioSection from './components/PortfolioSection';
+import LearningDesign from './pages/LearningDesign';
+import TechnicalWriting from './pages/TechnicalWriting';
+import GraphicDesign from './pages/GraphicDesign';
 import Project from './components/Project';
 import { portfolioData } from './data/portfolio';
-
-const PortfolioSectionWrapper: React.FC = () => {
-  const { sectionId } = useParams<{ sectionId: string }>();
-  const section = portfolioData.find(s => s.id === sectionId);
-  
-  if (!section) {
-    return <div>Section not found</div>;
-  }
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-    >
-      <PortfolioSection section={section} />
-    </motion.div>
-  );
-};
 
 const ProjectWrapper: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -47,72 +29,24 @@ const ProjectWrapper: React.FC = () => {
   }
   
   if (!project) {
-    return <div>Project not found</div>;
+    return <Navigate to="/" replace />;
   }
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-    >
-      <Project project={project} backLink={`/portfolio/${sectionId}`} />
-    </motion.div>
-  );
+  return <Project project={project} backLink={`/portfolio/${sectionId}`} />;
 };
 
-const AnimatedRoutes: React.FC = () => {
+const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes>
-        <Route
-          path="/"
-          element={
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <Home />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/portfolio/:sectionId"
-          element={<PortfolioSectionWrapper />}
-        />
-        <Route
-          path="/projects/:projectId"
-          element={<ProjectWrapper />}
-        />
-        <Route
-          path="/contact"
-          element={
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <Contact />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/resume"
-          element={
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <Resume />
-            </motion.div>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/portfolio/learning-design" element={<LearningDesign />} />
+        <Route path="/portfolio/technical-writing" element={<TechnicalWriting />} />
+        <Route path="/portfolio/graphic-design" element={<GraphicDesign />} />
+        <Route path="/projects/:projectId" element={<ProjectWrapper />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
   );
