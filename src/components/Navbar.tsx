@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -65,18 +65,18 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-primary/10 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             <div className="w-6 h-6 relative flex items-center justify-center">
-              <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+              <span className={`absolute h-0.5 w-6 bg-primary transform transition-all duration-300 ${
                 isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
               }`} />
-              <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+              <span className={`absolute h-0.5 w-6 bg-primary transform transition-all duration-300 ${
                 isOpen ? 'opacity-0' : 'opacity-100'
               }`} />
-              <span className={`absolute h-0.5 w-6 bg-gray-800 transform transition-all duration-300 ${
+              <span className={`absolute h-0.5 w-6 bg-primary transform transition-all duration-300 ${
                 isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
               }`} />
             </div>

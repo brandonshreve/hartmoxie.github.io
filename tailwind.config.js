@@ -6,21 +6,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#2c3e50',
-          light: '#34495e',
-          dark: '#1a252f',
-        },
-        secondary: {
-          DEFAULT: '#3498db',
-          light: '#5dade2',
-          dark: '#2980b9',
-        },
-        accent: {
-          DEFAULT: '#e74c3c',
-          light: '#ec7063',
-          dark: '#c0392b',
-        },
+        primary: 'rgb(0, 147, 69)', // Base green
+        'primary-light': 'rgb(0, 167, 79)', // Lighter green
+        'primary-dark': 'rgb(0, 127, 59)', // Darker green
+        secondary: 'rgb(147, 0, 69)', // Complementary red
+        'secondary-light': 'rgb(167, 0, 79)', // Lighter red
+        'secondary-dark': 'rgb(127, 0, 59)', // Darker red
+        accent: 'rgb(147, 147, 0)', // Complementary yellow
+        'accent-light': 'rgb(167, 167, 0)', // Lighter yellow
+        'accent-dark': 'rgb(127, 127, 0)', // Darker yellow
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

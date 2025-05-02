@@ -9,19 +9,19 @@ const Home: React.FC = () => {
       title: 'Learning Experience Design',
       description: 'Creating engaging and effective learning experiences through thoughtful design',
       link: '/learning-design',
-      imageUrl: 'https://placehold.co/800x450/4f46e5/ffffff?text=Learning+Design'
+      imageUrl: 'https://placehold.co/800x450/009345/ffffff?text=Learning+Design'
     },
     {
       title: 'Technical Writing',
       description: 'Simplifying complex concepts through clear and engaging documentation',
       link: '/technical-writing',
-      imageUrl: 'https://placehold.co/800x450/7c3aed/ffffff?text=Technical+Writing'
+      imageUrl: 'https://placehold.co/800x450/930045/ffffff?text=Technical+Writing'
     },
     {
       title: 'Graphic Design',
       description: 'Creating visually stunning designs that communicate effectively',
       link: '/graphic-design',
-      imageUrl: 'https://placehold.co/800x450/ec4899/ffffff?text=Graphic+Design'
+      imageUrl: 'https://placehold.co/800x450/939300/ffffff?text=Graphic+Design'
     },
   ];
 
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
               filter: 'brightness(0.5)',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-secondary/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-900/80 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
         </div>
         
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Work Section */}
+      {/* Portfolio */}
       <section id="featured-work" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <motion.h2 
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Featured Work
+            Portfolio
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioItems.map((item, index) => (
