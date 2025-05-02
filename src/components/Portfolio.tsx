@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-interface MediaItem {
+export interface MediaItem {
   type: 'image' | 'video' | 'document';
   url: string;
   alt?: string;
-  caption?: string;
+  caption?: string | ReactNode;
+  link?: string;
 }
 
 interface PortfolioProps {
@@ -100,48 +102,88 @@ const Portfolio: React.FC<PortfolioProps> = ({
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               className="bg-white rounded-lg shadow-sm overflow-hidden"
             >
-              {item.type === 'image' && (
-                <div className="relative">
-                  <img
-                    src={item.url}
-                    alt={item.alt || ''}
-                    className="w-full h-auto"
-                  />
-                  {item.caption && (
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
-                      <p className="text-sm">{item.caption}</p>
+              {item.link ? (
+                <Link to={item.link} className="block hover:opacity-90 transition-opacity">
+                  {item.type === 'image' && (
+                    <div className="relative">
+                      <img
+                        src={item.url}
+                        alt={item.alt || ''}
+                        className="w-full h-auto"
+                      />
+                      {item.caption && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+                          <p className="text-sm">{item.caption}</p>
+                        </div>
+                      )}
                     </div>
                   )}
-                </div>
-              )}
-              {item.type === 'video' && (
-                <div className="relative aspect-video">
-                  <video
-                    src={item.url}
-                    controls
-                    className="w-full h-full object-cover"
-                  />
-                  {item.caption && (
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
-                      <p className="text-sm">{item.caption}</p>
+                  {item.type === 'video' && (
+                    <div className="relative aspect-video">
+                      <video
+                        src={item.url}
+                        controls
+                        className="w-full h-full object-cover"
+                      />
+                      {item.caption && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+                          <p className="text-sm">{item.caption}</p>
+                        </div>
+                      )}
                     </div>
                   )}
-                </div>
-              )}
-              {item.type === 'document' && (
-                <div className="p-6">
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:text-primary-dark"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                    <span>{item.caption || 'View Document'}</span>
-                  </a>
-                </div>
+                  {item.type === 'document' && (
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 text-primary">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        <span>{item.caption || 'View Document'}</span>
+                      </div>
+                    </div>
+                  )}
+                </Link>
+              ) : (
+                <>
+                  {item.type === 'image' && (
+                    <div className="relative">
+                      <img
+                        src={item.url}
+                        alt={item.alt || ''}
+                        className="w-full h-auto"
+                      />
+                      {item.caption && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+                          <p className="text-sm">{item.caption}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {item.type === 'video' && (
+                    <div className="relative aspect-video">
+                      <video
+                        src={item.url}
+                        controls
+                        className="w-full h-full object-cover"
+                      />
+                      {item.caption && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+                          <p className="text-sm">{item.caption}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {item.type === 'document' && (
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 text-primary">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        <span>{item.caption || 'View Document'}</span>
+                      </div>
+                    </div>
+                  )}
+                </>
               )}
             </motion.div>
           ))}

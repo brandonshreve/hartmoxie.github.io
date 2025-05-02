@@ -90,17 +90,17 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4 text-primary">Portfolio</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/learning-design" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/portfolio/learning-design" className="text-gray-300 hover:text-primary transition-colors">
                   Learning Design
                 </Link>
               </li>
               <li>
-                <Link to="/technical-writing" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/portfolio/technical-writing" className="text-gray-300 hover:text-primary transition-colors">
                   Technical Writing
                 </Link>
               </li>
               <li>
-                <Link to="/graphic-design" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/portfolio/graphic-design" className="text-gray-300 hover:text-primary transition-colors">
                   Graphic Design
                 </Link>
               </li>
