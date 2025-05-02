@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,11 +28,29 @@ const Navbar: React.FC = () => {
     }`}>
       <nav className="container mx-auto px-6 py-4 bg-white">
         <div className="flex justify-between items-center">
-          <Link 
-            to="/" 
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-          >
-            Marissa Hart
+          <Link to="/">
+            <motion.div
+              className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] bg-clip-text text-transparent"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              whileHover={{
+                scale: 1.02,
+                backgroundPosition: ["0% 50%", "200% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear",
+                scale: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 20
+                }
+              }}
+            >
+              Marissa Hart
+            </motion.div>
           </Link>
           
           {/* Mobile menu button */}

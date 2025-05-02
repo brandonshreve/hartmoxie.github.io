@@ -1,8 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Card from '../components/Card';
 
 const Home: React.FC = () => {
+  const portfolioItems = [
+    {
+      title: 'Learning Experience Design',
+      description: 'Creating engaging and effective learning experiences through thoughtful design',
+      link: '/learning-design',
+      imageUrl: 'https://placehold.co/800x450/4f46e5/ffffff?text=Learning+Design'
+    },
+    {
+      title: 'Technical Writing',
+      description: 'Simplifying complex concepts through clear and engaging documentation',
+      link: '/technical-writing',
+      imageUrl: 'https://placehold.co/800x450/7c3aed/ffffff?text=Technical+Writing'
+    },
+    {
+      title: 'Graphic Design',
+      description: 'Creating visually stunning designs that communicate effectively',
+      link: '/graphic-design',
+      imageUrl: 'https://placehold.co/800x450/ec4899/ffffff?text=Graphic+Design'
+    },
+  ];
+
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
@@ -71,104 +93,14 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <h2 className="section-title text-center mb-16">Featured Work</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Learning Design Card */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="card group"
-            >
-              <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Learning Experience Design</h3>
-              <p className="text-gray-600 mb-4">
-                Creating engaging and effective learning experiences through thoughtful design
-              </p>
-              <Link
-                to="/learning-design"
-                className="text-primary font-medium inline-flex items-center group-hover:translate-x-1 transition-transform"
-              >
-                View Projects
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </motion.div>
-
-            {/* Technical Writing Card */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="card group"
-            >
-              <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Technical Writing</h3>
-              <p className="text-gray-600 mb-4">
-                Simplifying complex concepts through clear and engaging documentation
-              </p>
-              <Link
-                to="/technical-writing"
-                className="text-primary font-medium inline-flex items-center group-hover:translate-x-1 transition-transform"
-              >
-                View Projects
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </motion.div>
-
-            {/* Graphic Design Card */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="card group"
-            >
-              <div className="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-lg">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Graphic Design</h3>
-              <p className="text-gray-600 mb-4">
-                Creating visually stunning designs that communicate effectively
-              </p>
-              <Link
-                to="/graphic-design"
-                className="text-primary font-medium inline-flex items-center group-hover:translate-x-1 transition-transform"
-              >
-                View Projects
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </motion.div>
+            {portfolioItems.map((item, index) => (
+              <Card
+                key={index}
+                title={item.title}
+                description={item.description}
+                link={item.link}
+              />
+            ))}
           </div>
         </div>
       </section>
