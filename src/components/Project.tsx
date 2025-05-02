@@ -62,21 +62,21 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
         >
-          <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Role</h3>
             <p className="text-lg text-gray-900">{project.role}</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Timeline</h3>
             <p className="text-lg text-gray-900">{project.timeline}</p>
           </div>
           {project.client && (
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
               <h3 className="text-sm font-semibold text-gray-500 mb-1">Client</h3>
               <p className="text-lg text-gray-900">{project.client}</p>
             </div>
           )}
-          <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {project.skills.map((skill, index) => (
@@ -121,7 +121,7 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="bg-white rounded-lg shadow-sm overflow-hidden"
+              className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
             >
               {item.type === 'image' && (
                 <div className="relative">

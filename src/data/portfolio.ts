@@ -251,50 +251,102 @@ export const portfolioData: PortfolioSection[] = [
   {
     id: 'graphic-design',
     title: 'Graphic Design',
-    subtitle: 'Creating Visually Stunning Designs That Communicate Effectively',
-    description: 'A collection of graphic design projects that showcase my ability to create compelling visual content that effectively communicates messages and enhances user experiences.',
+    subtitle: 'Visual Communication & Brand Identity',
+    description: 'Creating compelling visual designs that communicate ideas effectively and build strong brand identities.',
     role: 'Graphic Designer',
     timeline: '2018 - Present',
-    skills: [
-      'Brand Identity',
-      'Digital Design',
-      'Visual Communication',
-      'Typography',
-      'Layout Design',
-      'Adobe Creative Suite'
-    ],
-    tools: [
-      'Adobe Photoshop',
-      'Adobe Illustrator',
-      'Adobe InDesign',
-      'Figma',
-      'Sketch',
-      'Canva',
-      'Procreate',
-      'After Effects'
-    ],
+    skills: ['Brand Identity', 'UI/UX Design', 'Visual Communication', 'Typography', 'Color Theory'],
+    tools: ['Adobe Creative Suite', 'Figma', 'Sketch', 'Procreate'],
     projects: [
       {
-        id: 'brand-identity',
-        title: 'Brand Identity',
-        type: 'Visual Design',
-        description: 'Development of a comprehensive brand identity system for a tech startup.',
+        id: 'strongform',
+        title: 'StrongForm',
+        type: 'Graphic Design',
+        description: 'Designed a modern and intuitive logo and app interface for a fitness tracking application.',
+        role: 'Graphic Designer',
+        timeline: '2022',
+        skills: ['Logo Design', 'UI Design', 'Brand Identity', 'Typography'],
+        tools: ['Adobe Illustrator', 'Figma', 'Adobe XD'],
         media: [
           {
-            type: 'image' as const,
-            url: 'https://placehold.co/1200x600/939300/ffffff?text=Brand+Identity',
-            alt: 'Brand Identity Project',
-            caption: 'Brand Identity System'
+            type: 'image',
+            url: '/images/strongform.jpg',
+            alt: 'StrongForm Logo and App Design',
+            caption: 'Logo and App Design for StrongForm'
           }
-        ],
-        skills: [
-          'Brand Identity',
-          'Visual Design',
-          'Typography',
-          'Layout Design'
-        ],
+        ]
+      },
+      {
+        id: 'politicus',
+        title: 'Politicus',
+        type: 'Graphic Design',
+        description: 'Created a clean and professional webpage design for a political news platform.',
         role: 'Graphic Designer',
-        timeline: 'Q3 2021'
+        timeline: '2021',
+        skills: ['Web Design', 'UI/UX', 'Visual Hierarchy', 'Responsive Design'],
+        tools: ['Figma', 'Adobe Photoshop', 'Sketch'],
+        media: [
+          {
+            type: 'image',
+            url: '/images/politicus.jpg',
+            alt: 'Politicus Webpage Design',
+            caption: 'Webpage Design for Politicus'
+          }
+        ]
+      },
+      {
+        id: 'tacos-las-delicias',
+        title: 'Tacos Las Delicias',
+        type: 'Graphic Design',
+        description: 'Developed a vibrant and engaging web design for a local Mexican restaurant.',
+        role: 'Graphic Designer',
+        timeline: '2020',
+        skills: ['Web Design', 'Brand Identity', 'Color Theory', 'Typography'],
+        tools: ['Adobe XD', 'Adobe Photoshop', 'Illustrator'],
+        media: [
+          {
+            type: 'image',
+            url: '/images/tacos-las-delicias.jpg',
+            alt: 'Tacos Las Delicias Web Design',
+            caption: 'Web Design for Tacos Las Delicias'
+          }
+        ]
+      },
+      {
+        id: 'cash-crop',
+        title: 'Cash Crop',
+        type: 'Graphic Design',
+        description: 'Designed a user-friendly app interface for an agricultural management platform.',
+        role: 'Graphic Designer',
+        timeline: '2019',
+        skills: ['App Design', 'UI/UX', 'User Flow', 'Wireframing'],
+        tools: ['Sketch', 'Adobe XD', 'Figma'],
+        media: [
+          {
+            type: 'image',
+            url: '/images/cash-crop.jpg',
+            alt: 'Cash Crop App Design',
+            caption: 'App Design for Cash Crop'
+          }
+        ]
+      },
+      {
+        id: '404-error-pages',
+        title: '404 Error Pages',
+        type: 'Graphic Design',
+        description: 'Created a series of creative and engaging 404 error pages for various websites.',
+        role: 'Graphic Designer',
+        timeline: '2018',
+        skills: ['Web Design', 'Illustration', 'User Experience', 'Creativity'],
+        tools: ['Adobe Illustrator', 'Photoshop', 'Figma'],
+        media: [
+          {
+            type: 'image',
+            url: '/images/404-error-pages.jpg',
+            alt: '404 Error Pages Design',
+            caption: 'Collection of 404 Error Pages'
+          }
+        ]
       }
     ]
   }

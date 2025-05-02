@@ -12,16 +12,16 @@ const Home: React.FC = () => {
       imageUrl: 'https://placehold.co/800x450/009345/ffffff?text=Learning+Design'
     },
     {
-      title: 'Technical Writing',
-      description: 'Simplifying complex concepts through clear and engaging documentation',
-      link: '/portfolio/technical-writing',
-      imageUrl: 'https://placehold.co/800x450/930045/ffffff?text=Technical+Writing'
-    },
-    {
       title: 'Graphic Design',
       description: 'Creating visually stunning designs that communicate effectively',
       link: '/portfolio/graphic-design',
       imageUrl: 'https://placehold.co/800x450/939300/ffffff?text=Graphic+Design'
+    },
+    {
+      title: 'Technical Writing',
+      description: 'Simplifying complex concepts through clear and engaging documentation',
+      link: '/portfolio/technical-writing',
+      imageUrl: 'https://placehold.co/800x450/930045/ffffff?text=Technical+Writing'
     },
   ];
 

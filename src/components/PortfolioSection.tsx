@@ -44,15 +44,15 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
         >
-          <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Role</h3>
             <p className="text-lg text-gray-900">{section.role}</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Timeline</h3>
             <p className="text-lg text-gray-900">{section.timeline}</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {section.skills.map((skill, index) => (
@@ -65,7 +65,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
               ))}
             </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Tools & Technologies</h3>
             <div className="flex flex-wrap gap-2">
               {section.tools.map((tool, index) => (
@@ -87,16 +87,14 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="bg-white rounded-lg shadow-sm overflow-hidden"
+              className="bg-white rounded-lg shadow-lg overflow-hidden h-96 w-full border border-gray-200"
             >
               {item.link ? (
-                <Link to={item.link} className="block hover:opacity-90 transition-opacity">
-                  <div className="relative">
-                    <img
-                      src={item.url}
-                      alt={item.alt || ''}
-                      className="w-full h-auto"
-                    />
+                <Link to={item.link} className="block h-full w-full hover:opacity-90 transition-opacity">
+                  <div 
+                    className="relative h-full w-full bg-cover bg-center"
+                    style={{ backgroundImage: `url(${item.url})` }}
+                  >
                     {item.caption && (
                       <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
                         <p className="text-sm">{item.caption}</p>
@@ -105,12 +103,10 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
                   </div>
                 </Link>
               ) : (
-                <div className="relative">
-                  <img
-                    src={item.url}
-                    alt={item.alt || ''}
-                    className="w-full h-auto"
-                  />
+                <div 
+                  className="relative h-full w-full bg-cover bg-center"
+                  style={{ backgroundImage: `url(${item.url})` }}
+                >
                   {item.caption && (
                     <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
                       <p className="text-sm">{item.caption}</p>
