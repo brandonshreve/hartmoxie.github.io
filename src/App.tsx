@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import LearningDesign from './pages/LearningDesign';
 import TechnicalWriting from './pages/TechnicalWriting';
 import GraphicDesign from './pages/GraphicDesign';
+import Contact from './pages/Contact';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/learning-design" element={<LearningDesign />} />
         <Route path="/technical-writing" element={<TechnicalWriting />} />
         <Route path="/graphic-design" element={<GraphicDesign />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
   );
