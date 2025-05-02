@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 
 const Navbar: React.FC = () => {
@@ -11,8 +12,14 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link to="/" className="text-xl font-bold text-primary">
-                Hartmoxie
+              <Link to="/" className="text-3xl font-bold">
+                <motion.span
+                  className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  Marissa Hart
+                </motion.span>
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">

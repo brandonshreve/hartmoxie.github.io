@@ -67,15 +67,12 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
             <p className="text-lg text-gray-900">{project.role}</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-            <h3 className="text-sm font-semibold text-gray-500 mb-1">Timeline</h3>
+            <h3 className="text-sm font-semibold text-gray-500 mb-1">Timeline & Client</h3>
             <p className="text-lg text-gray-900">{project.timeline}</p>
+            {project.client && (
+              <p className="text-lg text-gray-900 mt-2">{project.client}</p>
+            )}
           </div>
-          {project.client && (
-            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-              <h3 className="text-sm font-semibold text-gray-500 mb-1">Client</h3>
-              <p className="text-lg text-gray-900">{project.client}</p>
-            </div>
-          )}
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Skills</h3>
             <div className="flex flex-wrap gap-2">
@@ -85,6 +82,19 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
                   className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
                 >
                   {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+            <h3 className="text-sm font-semibold text-gray-500 mb-1">Tools & Technologies</h3>
+            <div className="flex flex-wrap gap-2">
+              {project.tools?.map((tool, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm"
+                >
+                  {tool}
                 </span>
               ))}
             </div>

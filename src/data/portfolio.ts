@@ -218,7 +218,7 @@ export const portfolioData: PortfolioSection[] = [
         ],
         role: 'Technical Writer',
         timeline: 'Q2 2023',
-        client: 'Smart Office Solutions',
+        client: 'Amazon',
         tools: [
           'Microsoft Word',
           'SDL Tridion'

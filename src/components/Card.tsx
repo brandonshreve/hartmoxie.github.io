@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ title, description, link, imageUrl }) => {
       >
         <div className="relative h-48 overflow-hidden">
           {isLoading && (
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondaary/20 animate-pulse" />
           )}
           <img
             src={imageUrl}
