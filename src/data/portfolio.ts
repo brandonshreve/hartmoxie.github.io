@@ -171,84 +171,6 @@ export const portfolioData: PortfolioSection[] = [
     ]
   },
   {
-    id: 'technical-writing',
-    title: 'Technical Writing',
-    subtitle: 'Simplifying Complex Concepts Through Clear Documentation',
-    description: 'A showcase of technical writing projects that demonstrate my ability to transform complex technical information into clear, accessible, and engaging content.',
-    role: 'Technical Writer',
-    timeline: '2019 - Present',
-    skills: [
-      'Technical Documentation',
-      'API Documentation',
-      'User Guides',
-      'Content Strategy',
-      'Information Architecture',
-      'Technical Editing'
-    ],
-    tools: [
-      'Markdown',
-      'Git',
-      'Confluence',
-      'Jira',
-      'Swagger',
-      'Postman',
-      'VS Code',
-      'Adobe FrameMaker'
-    ],
-    projects: [
-      {
-        id: 'sticky-note-printer',
-        title: 'Reset Your Smart Sticky Note Printer',
-        type: 'Troubleshooting Guide',
-        description: 'A comprehensive troubleshooting guide developed to help customers reset their Smart Sticky Note Printer. The guide provides clear, step-by-step instructions with visual aids to ensure users can successfully troubleshoot and reset their device.',
-        media: [
-          {
-            type: 'image',
-            url: '/images/amazon-sticky-printer.jpg',
-            alt: 'Sticky Note Printer Troubleshooting Guide',
-            caption: 'Troubleshooting Guide Screenshot'
-          }
-        ],
-        skills: [
-          'Technical Writing',
-          'User Documentation',
-          'Troubleshooting Guides',
-          'Visual Communication',
-          'Content Organization'
-        ],
-        role: 'Technical Writer',
-        timeline: 'Q2 2023',
-        client: 'Amazon',
-        tools: [
-          'Microsoft Word',
-          'SDL Tridion'
-        ],
-        externalLink: 'https://www.amazon.com/gp/help/customer/display.html?nodeId=G4UXV3RG3C9G56UH'
-      },
-      {
-        id: 'api-documentation',
-        title: 'API Documentation',
-        type: 'Technical Documentation',
-        description: 'Comprehensive API documentation for a cloud-based service platform.',
-        media: [
-          {
-            type: 'image' as const,
-            url: 'https://placehold.co/1200x600/930045/ffffff?text=API+Docs',
-            alt: 'API Documentation',
-            caption: 'API Documentation Example'
-          }
-        ],
-        skills: [
-          'API Documentation',
-          'Technical Writing',
-          'Information Architecture'
-        ],
-        role: 'Technical Writer',
-        timeline: 'Q2 2021'
-      }
-    ]
-  },
-  {
     id: 'graphic-design',
     title: 'Graphic Design',
     subtitle: 'Visual Communication & Brand Identity',
@@ -347,6 +269,84 @@ export const portfolioData: PortfolioSection[] = [
             caption: 'Collection of 404 Error Pages'
           }
         ]
+      }
+    ]
+  },
+  {
+    id: 'technical-writing',
+    title: 'Technical Writing',
+    subtitle: 'Simplifying Complex Concepts Through Clear Documentation',
+    description: 'A showcase of technical writing projects that demonstrate my ability to transform complex technical information into clear, accessible, and engaging content.',
+    role: 'Technical Writer',
+    timeline: '2019 - Present',
+    skills: [
+      'Technical Documentation',
+      'API Documentation',
+      'User Guides',
+      'Content Strategy',
+      'Information Architecture',
+      'Technical Editing'
+    ],
+    tools: [
+      'Markdown',
+      'Git',
+      'Confluence',
+      'Jira',
+      'Swagger',
+      'Postman',
+      'VS Code',
+      'Adobe FrameMaker'
+    ],
+    projects: [
+      {
+        id: 'sticky-note-printer',
+        title: 'Reset Your Smart Sticky Note Printer',
+        type: 'Troubleshooting Guide',
+        description: 'A comprehensive troubleshooting guide developed to help customers reset their Smart Sticky Note Printer. The guide provides clear, step-by-step instructions with visual aids to ensure users can successfully troubleshoot and reset their device.',
+        media: [
+          {
+            type: 'image',
+            url: '/images/amazon-sticky-printer.jpg',
+            alt: 'Sticky Note Printer Troubleshooting Guide',
+            caption: 'Troubleshooting Guide Screenshot'
+          }
+        ],
+        skills: [
+          'Technical Writing',
+          'User Documentation',
+          'Troubleshooting Guides',
+          'Visual Communication',
+          'Content Organization'
+        ],
+        role: 'Technical Writer',
+        timeline: 'Q2 2023',
+        client: 'Amazon',
+        tools: [
+          'Microsoft Word',
+          'SDL Tridion'
+        ],
+        externalLink: 'https://www.amazon.com/gp/help/customer/display.html?nodeId=G4UXV3RG3C9G56UH'
+      },
+      {
+        id: 'api-documentation',
+        title: 'API Documentation',
+        type: 'Technical Documentation',
+        description: 'Comprehensive API documentation for a cloud-based service platform.',
+        media: [
+          {
+            type: 'image' as const,
+            url: 'https://placehold.co/1200x600/930045/ffffff?text=API+Docs',
+            alt: 'API Documentation',
+            caption: 'API Documentation Example'
+          }
+        ],
+        skills: [
+          'API Documentation',
+          'Technical Writing',
+          'Information Architecture'
+        ],
+        role: 'Technical Writer',
+        timeline: 'Q2 2021'
       }
     ]
   }
