@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Hartmoxie Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Responsive design that works on all devices
+- Modern UI with smooth animations
+- Sections for About, Portfolio, Skills, and Contact
+- Contact form for easy communication
+- Social media integration
+- SEO friendly
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or higher)
+- npm or yarn
+- Git
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/hartmoxie.github.io.git
+cd hartmoxie.github.io
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+```bash
+npm install
+```
 
-### `npm run build`
+3. Start the development server:
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The site will be available at http://localhost:3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Customization
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Update the content in the components:
+   - Edit `src/components/About.tsx` to update your personal information
+   - Modify `src/components/Portfolio.tsx` to showcase your projects
+   - Update contact information in `src/components/Contact.tsx`
 
-### `npm run eject`
+2. Customize the styling:
+   - Colors and theme can be modified in `tailwind.config.js`
+   - Component-specific styles are in their respective files
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Deployment to GitHub Pages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Update the `homepage` field in `package.json`:
+```json
+{
+  "homepage": "https://hartmoxie.com"
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Install gh-pages package:
+```bash
+npm install --save-dev gh-pages
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Add deployment scripts to `package.json`:
+```json
+{
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
+```
 
-## Learn More
+4. Deploy the site:
+```bash
+npm run deploy
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Configure your domain:
+   - Go to your repository settings
+   - Under "GitHub Pages", set your custom domain
+   - Add a CNAME file to the `public` directory with your domain
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Built With
+
+- [React](https://reactjs.org/) - Frontend framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [GitHub Pages](https://pages.github.com/) - Hosting
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
