@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 interface HandDrawnTextProps {
   text: string;
@@ -7,15 +8,24 @@ interface HandDrawnTextProps {
 }
 
 const HandDrawnText: React.FC<HandDrawnTextProps> = ({ text, className = '' }) => {
+  const containerClasses = clsx(
+    'relative w-full max-w-[90rem] mx-auto',
+    className
+  );
+
+  const textClasses = clsx(
+    'font-hello text-5xl md:text-7xl inline-block px-24 md:px-32'
+  );
+
   return (
     <motion.div
-      className={`relative w-full max-w-[90rem] mx-auto ${className}`}
+      className={containerClasses}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <motion.span
-        className="font-hello text-5xl md:text-7xl inline-block px-24 md:px-32"
+        className={textClasses}
         style={{
           background: 'linear-gradient(90deg, #4CAF50, #FFD700, #FF5733, #C70039, #9C27B0, #2196F3)',
           WebkitBackgroundClip: 'text',

@@ -1,12 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 const Footer: React.FC = () => {
+  const footerClasses = clsx(
+    'bg-gray-900 text-white py-12'
+  );
+
+  const containerClasses = clsx(
+    'container mx-auto px-6'
+  );
+
+  const gridClasses = clsx(
+    'grid grid-cols-1 md:grid-cols-4 gap-8'
+  );
+
+  const sectionTitleClasses = clsx(
+    'text-lg font-semibold mb-4 text-primary'
+  );
+
+  const listClasses = clsx(
+    'space-y-2'
+  );
+
+  const linkClasses = clsx(
+    'text-gray-300 hover:text-primary transition-colors'
+  );
+
+  const iconLinkClasses = clsx(
+    'text-gray-300 hover:text-primary transition-colors flex items-center gap-2'
+  );
+
+  const copyrightClasses = clsx(
+    'mt-12 pt-8 border-t border-gray-800 text-center text-gray-400'
+  );
+
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className={footerClasses}>
+      <div className={containerClasses}>
+        <div className={gridClasses}>
           {/* About Section */}
           <div>
             <motion.div
@@ -39,15 +72,15 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className={sectionTitleClasses}>Quick Links</h3>
+            <ul className={listClasses}>
               <li>
-                <Link to="/" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/" className={linkClasses}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/resume" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/resume" className={linkClasses}>
                   Resume
                 </Link>
               </li>
@@ -56,14 +89,14 @@ const Footer: React.FC = () => {
 
           {/* Connect */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Connect</h3>
-            <ul className="space-y-2">
+            <h3 className={sectionTitleClasses}>Connect</h3>
+            <ul className={listClasses}>
               <li>
                 <a 
                   href="https://www.linkedin.com/in/marissa-hart/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2"
+                  className={iconLinkClasses}
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -74,7 +107,7 @@ const Footer: React.FC = () => {
               <li>
                 <a 
                   href="mailto:hartmoxie@gmail.com"
-                  className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2"
+                  className={iconLinkClasses}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -87,20 +120,20 @@ const Footer: React.FC = () => {
 
           {/* Portfolio Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Portfolio</h3>
-            <ul className="space-y-2">
+            <h3 className={sectionTitleClasses}>Portfolio</h3>
+            <ul className={listClasses}>
               <li>
-                <Link to="/portfolio/learning-design" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/portfolio/learning-design" className={linkClasses}>
                   Learning Design
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio/technical-writing" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/portfolio/technical-writing" className={linkClasses}>
                   Technical Writing
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio/graphic-design" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/portfolio/graphic-design" className={linkClasses}>
                   Graphic Design
                 </Link>
               </li>
@@ -109,7 +142,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+        <div className={copyrightClasses}>
           <p>&copy; {new Date().getFullYear()} Marissa Hart. All rights reserved.</p>
         </div>
       </div>
