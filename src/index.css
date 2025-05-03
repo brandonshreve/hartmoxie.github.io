@@ -40,6 +40,11 @@
     @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 
            hover:shadow-xl transform hover:-translate-y-1;
   }
+
+  .font-dancing-script {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+  }
 }
 
 /* Custom animations */

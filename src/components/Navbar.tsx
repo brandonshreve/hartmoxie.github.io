@@ -37,11 +37,11 @@ const Navbar: React.FC = () => {
                     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                   }}
                   whileHover={{
-                    scale: 1.02,
+                    scale: 1.25,
                     backgroundPosition: ["0% 50%", "200% 50%", "0% 50%"],
                   }}
                   transition={{
-                    duration: 8,
+                    duration: 2,
                     repeat: Infinity,
                     repeatType: "reverse",
                     ease: "linear",

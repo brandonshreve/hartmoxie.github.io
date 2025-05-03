@@ -55,7 +55,9 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Marissa Hart
+              <span className="text-3xl md:text-4xl font-normal">Hi, I'm</span>
+              <br />
+              <span className="font-dancing-script text-6xl md:text-8xl">Marissa Hart</span>
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto"
