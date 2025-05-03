@@ -63,17 +63,6 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
         >
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-            <h3 className="text-sm font-semibold text-gray-500 mb-1">Role</h3>
-            <p className="text-lg text-gray-900">{project.role}</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-            <h3 className="text-sm font-semibold text-gray-500 mb-1">Timeline & Client</h3>
-            <p className="text-lg text-gray-900">{project.timeline}</p>
-            {project.client && (
-              <p className="text-lg text-gray-900 mt-2">{project.client}</p>
-            )}
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Skills</h3>
             <div className="flex flex-wrap gap-2">
               {project.skills.map((skill, index) => (
@@ -99,6 +88,12 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
               ))}
             </div>
           </div>
+          {project.client && (
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 className="text-sm font-semibold text-gray-500 mb-1">Client</h3>
+              <p className="text-lg text-gray-900">{project.client}</p>
+            </div>
+          )}
         </motion.div>
 
         {/* Learning Objectives */}
@@ -123,11 +118,33 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
           </motion.div>
         )}
 
+        {/* Outcomes */}
+        {project.outcomes && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-12"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Outcomes</h2>
+            <ul className="space-y-2">
+              {project.outcomes.map((outcome, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <svg className="w-5 h-5 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                  <span className="text-gray-600">{outcome}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+
         {/* Media Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-12"
         >
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Media</h2>
@@ -137,7 +154,7 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
               >
                 {item.type === 'image' && (
@@ -187,28 +204,6 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
             ))}
           </div>
         </motion.div>
-
-        {/* Outcomes */}
-        {project.outcomes && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-12"
-          >
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Outcomes</h2>
-            <ul className="space-y-2">
-              {project.outcomes.map((outcome, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                  <span className="text-gray-600">{outcome}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
       </div>
     </div>
   );

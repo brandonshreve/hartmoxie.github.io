@@ -42,16 +42,8 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
         >
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-            <h3 className="text-sm font-semibold text-gray-500 mb-1">Role</h3>
-            <p className="text-lg text-gray-900">{section.role}</p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-            <h3 className="text-sm font-semibold text-gray-500 mb-1">Timeline</h3>
-            <p className="text-lg text-gray-900">{section.timeline}</p>
-          </div>
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
             <h3 className="text-sm font-semibold text-gray-500 mb-1">Skills</h3>
             <div className="flex flex-wrap gap-2">

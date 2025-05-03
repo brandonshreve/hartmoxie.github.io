@@ -57,7 +57,18 @@ const Home: React.FC = () => {
             >
               <span className="text-3xl md:text-4xl font-normal">Hi, I'm</span>
               <br />
-              <span className="font-dancing-script text-6xl md:text-8xl">Marissa Hart</span>
+              <span 
+                className="font-hello text-6xl md:text-8xl inline-block px-8"
+                style={{
+                  background: 'linear-gradient(90deg, #4CAF50, #FFD700, #FF5733, #C70039, #9C27B0, #2196F3)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundSize: '200% auto',
+                  animation: 'gradient 8s linear infinite'
+                }}
+              >
+                Marissa Hart
+              </span>
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto"

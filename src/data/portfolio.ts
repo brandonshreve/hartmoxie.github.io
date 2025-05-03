@@ -9,8 +9,6 @@ export interface Project {
   outcomes?: string[];
   media: MediaItem[];
   skills: string[];
-  role: string;
-  timeline: string;
   client?: string;
   tools?: string[];
   externalLink?: string;
@@ -21,8 +19,6 @@ export interface PortfolioSection {
   title: string;
   subtitle: string;
   description: string;
-  role: string;
-  timeline: string;
   skills: string[];
   tools: string[];
   projects: Project[];
@@ -34,8 +30,6 @@ export const portfolioData: PortfolioSection[] = [
     title: 'Learning Experience Design',
     subtitle: 'Creating Engaging Digital Learning Experiences',
     description: 'A collection of learning experience design projects that demonstrate my ability to create effective, engaging, and measurable learning solutions. These projects showcase a mix of self-directed eLearning and instructor-led training experiences.',
-    role: 'Learning Experience Designer',
-    timeline: '2020 - Present',
     skills: [
       'Instructional Design',
       'eLearning Development',
@@ -98,8 +92,6 @@ export const portfolioData: PortfolioSection[] = [
           'Video Production',
           'Assessment Design'
         ],
-        role: 'Learning Experience Designer',
-        timeline: 'Q2 2022',
         client: 'Hospitality Training Solutions'
       },
       {
@@ -121,8 +113,7 @@ export const portfolioData: PortfolioSection[] = [
           'Process Documentation',
           'Assessment Design'
         ],
-        role: 'Learning Experience Designer',
-        timeline: 'Q3 2022'
+        client: 'Hospitality Training Solutions'
       },
       {
         id: 'ambassador-training',
@@ -143,8 +134,7 @@ export const portfolioData: PortfolioSection[] = [
           'Content Development',
           'Assessment Design'
         ],
-        role: 'Learning Experience Designer',
-        timeline: 'Q4 2022'
+        client: 'Hospitality Training Solutions'
       },
       {
         id: 'star-method',
@@ -165,8 +155,7 @@ export const portfolioData: PortfolioSection[] = [
           'Interactive Design',
           'Assessment Design'
         ],
-        role: 'Learning Experience Designer',
-        timeline: 'Q1 2023'
+        client: 'Hospitality Training Solutions'
       }
     ]
   },
@@ -175,8 +164,6 @@ export const portfolioData: PortfolioSection[] = [
     title: 'Graphic Design',
     subtitle: 'Visual Communication & Brand Identity',
     description: 'Creating compelling visual designs that communicate ideas effectively and build strong brand identities.',
-    role: 'Graphic Designer',
-    timeline: '2018 - Present',
     skills: ['Brand Identity', 'UI/UX Design', 'Visual Communication', 'Typography', 'Color Theory'],
     tools: ['Adobe Creative Suite', 'Figma', 'Sketch', 'Procreate'],
     projects: [
@@ -185,8 +172,6 @@ export const portfolioData: PortfolioSection[] = [
         title: 'StrongForm',
         type: 'Graphic Design',
         description: 'Designed a modern and intuitive logo and app interface for a fitness tracking application.',
-        role: 'Graphic Designer',
-        timeline: '2022',
         skills: ['Logo Design', 'UI Design', 'Brand Identity', 'Typography'],
         tools: ['Adobe Illustrator', 'Figma', 'Adobe XD'],
         media: [
@@ -203,8 +188,6 @@ export const portfolioData: PortfolioSection[] = [
         title: 'Politicus',
         type: 'Graphic Design',
         description: 'Created a clean and professional webpage design for a political news platform.',
-        role: 'Graphic Designer',
-        timeline: '2021',
         skills: ['Web Design', 'UI/UX', 'Visual Hierarchy', 'Responsive Design'],
         tools: ['Figma', 'Adobe Photoshop', 'Sketch'],
         media: [
@@ -221,8 +204,6 @@ export const portfolioData: PortfolioSection[] = [
         title: 'Tacos Las Delicias',
         type: 'Graphic Design',
         description: 'Developed a vibrant and engaging web design for a local Mexican restaurant.',
-        role: 'Graphic Designer',
-        timeline: '2020',
         skills: ['Web Design', 'Brand Identity', 'Color Theory', 'Typography'],
         tools: ['Adobe XD', 'Adobe Photoshop', 'Illustrator'],
         media: [
@@ -239,8 +220,6 @@ export const portfolioData: PortfolioSection[] = [
         title: 'Cash Crop',
         type: 'Graphic Design',
         description: 'Designed a user-friendly app interface for an agricultural management platform.',
-        role: 'Graphic Designer',
-        timeline: '2019',
         skills: ['App Design', 'UI/UX', 'User Flow', 'Wireframing'],
         tools: ['Sketch', 'Adobe XD', 'Figma'],
         media: [
@@ -257,8 +236,6 @@ export const portfolioData: PortfolioSection[] = [
         title: '404 Error Pages',
         type: 'Graphic Design',
         description: 'Created a series of creative and engaging 404 error pages for various websites.',
-        role: 'Graphic Designer',
-        timeline: '2018',
         skills: ['Web Design', 'Illustration', 'User Experience', 'Creativity'],
         tools: ['Adobe Illustrator', 'Photoshop', 'Figma'],
         media: [
@@ -277,8 +254,6 @@ export const portfolioData: PortfolioSection[] = [
     title: 'Technical Writing',
     subtitle: 'Simplifying Complex Concepts Through Clear Documentation',
     description: 'A showcase of technical writing projects that demonstrate my ability to transform complex technical information into clear, accessible, and engaging content.',
-    role: 'Technical Writer',
-    timeline: '2019 - Present',
     skills: [
       'Technical Documentation',
       'API Documentation',
@@ -318,8 +293,6 @@ export const portfolioData: PortfolioSection[] = [
           'Visual Communication',
           'Content Organization'
         ],
-        role: 'Technical Writer',
-        timeline: 'Q2 2023',
         client: 'Amazon',
         tools: [
           'Microsoft Word',
@@ -345,8 +318,7 @@ export const portfolioData: PortfolioSection[] = [
           'Technical Writing',
           'Information Architecture'
         ],
-        role: 'Technical Writer',
-        timeline: 'Q2 2021'
+        client: 'Cloud Service Platform'
       }
     ]
   }
