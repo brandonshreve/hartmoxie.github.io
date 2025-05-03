@@ -6,22 +6,22 @@ import Card from '../components/Card';
 const Home: React.FC = () => {
   const portfolioItems = [
     {
+      title: 'UX Design',
+      description: 'Creating visually stunning designs that communicate effectively',
+      link: '/portfolio/graphic-design',
+      imageUrl: '/images/thumbnails/ux_thumbnail.png'
+    },
+    {
       title: 'Learning Experience Design',
       description: 'Creating engaging and effective learning experiences through thoughtful design',
       link: '/portfolio/learning-design',
-      imageUrl: 'https://placehold.co/800x450/009345/ffffff?text=Learning+Design'
-    },
-    {
-      title: 'Graphic Design',
-      description: 'Creating visually stunning designs that communicate effectively',
-      link: '/portfolio/graphic-design',
-      imageUrl: 'https://placehold.co/800x450/939300/ffffff?text=Graphic+Design'
+      imageUrl: '/images/thumbnails/learning_thumbnail.png'
     },
     {
       title: 'Technical Writing',
       description: 'Simplifying complex concepts through clear and engaging documentation',
       link: '/portfolio/technical-writing',
-      imageUrl: 'https://placehold.co/800x450/930045/ffffff?text=Technical+Writing'
+      imageUrl: '/images/thumbnails/writing_thumbnail.png'
     },
   ];
 
