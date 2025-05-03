@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
+import HandDrawnText from '../components/HandDrawnText';
 
 const Home: React.FC = () => {
   const portfolioItems = [
@@ -55,20 +56,9 @@ const Home: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-3xl md:text-4xl font-normal">Hi, I'm</span>
+              <span className="text-xl md:text-2xl font-normal">Hi, I'm</span>
               <br />
-              <span 
-                className="font-hello text-6xl md:text-8xl inline-block px-8"
-                style={{
-                  background: 'linear-gradient(90deg, #4CAF50, #FFD700, #FF5733, #C70039, #9C27B0, #2196F3)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundSize: '200% auto',
-                  animation: 'gradient 8s linear infinite'
-                }}
-              >
-                Marissa Hart
-              </span>
+              <HandDrawnText text="Marissa Hart" />
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto"
