@@ -144,6 +144,17 @@ const Footer: React.FC = () => {
         {/* Copyright */}
         <div className={copyrightClasses}>
           <p>&copy; {new Date().getFullYear()} Marissa Hart. All rights reserved.</p>
+          <p className="text-sm text-gray-400 mt-2">
+            Made with <span className="text-red-500">♥</span> by{' '}
+            <a 
+              href="https://brandonshreve.dev" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary-dark transition-colors"
+            >
+              Brandon Shreve
+            </a>
+          </p>
         </div>
       </div>
     </footer>
