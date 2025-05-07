@@ -149,7 +149,7 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
         >
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Media</h2>
           <div className="space-y-12">
-            {project.media.map((item, index) => (
+            {project.media.filter(item => !item.hidden).map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -171,7 +171,23 @@ const Project: React.FC<ProjectProps> = ({ project, backLink }) => {
                     )}
                   </div>
                 )}
-                {item.type === 'video' && (
+                {item.type === 'video' && item.videoType === 'youtube' && (
+                  <div className="relative aspect-video min-h-[400px]">
+                    <iframe
+                      src={item.url.replace('watch?v=', 'embed/')}
+                      title={item.alt || 'YouTube video'}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                    {item.caption && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+                        <p className="text-sm">{item.caption}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+                {item.type === 'video' && !item.videoType && (
                   <div className="relative aspect-video">
                     <video
                       src={item.url}

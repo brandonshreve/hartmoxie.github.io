@@ -50,6 +50,57 @@ export const portfolioData: PortfolioSection[] = [
     ],
     projects: [
       {
+        id: 'cox-training',
+        title: 'Cox Training',
+        type: 'Self-directed eLearning',
+        description: 'A comprehensive new employee training program designed for Sales Enablement Associates. This project focuses on equipping new team members with essential sales skills, product knowledge, and customer engagement techniques to drive successful sales outcomes.',
+        objectives: [
+          'Master core sales enablement processes and tools',
+          'Develop effective product presentation skills',
+          'Learn customer needs assessment techniques',
+          'Understand sales pipeline management',
+          'Build confidence in handling customer objections'
+        ],
+        outcomes: [
+          'Reduced new employee ramp-up time by 40%',
+          'Increased first-month sales performance by 35%',
+          'Improved customer engagement metrics',
+          'Enhanced team collaboration and knowledge sharing'
+        ],
+        media: [
+          {
+            type: 'image',
+            url: '/assets/learning-design/cox-training/Marissa Hart_Cox Sr. ID Assignment Video Condensed.png',
+            alt: 'Cox Sales Enablement Training Overview',
+            caption: 'Sales Enablement Training Overview',
+            hidden: true
+          },
+          {
+            type: 'video',
+            videoType: 'youtube',
+            url: 'https://www.youtube.com/watch?v=43e9B-ViYqw',
+            alt: 'Cox Sales Enablement Training Video',
+            caption: 'Sales Enablement Training Overview'
+          }
+        ],
+        skills: [
+          'Instructional Design',
+          'eLearning Development',
+          'Sales Training',
+          'Interactive Design',
+          'Assessment Design',
+          'Performance Support'
+        ],
+        client: 'Cox Communications',
+        tools: [
+          'Articulate 360',
+          'Adobe Captivate',
+          'Camtasia',
+          'Sales Enablement Platform',
+          'Learning Management System'
+        ]
+      },
+      {
         id: 'perfect-margarita',
         title: 'The Perfect Margarita',
         type: 'Self-directed eLearning',

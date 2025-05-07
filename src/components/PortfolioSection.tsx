@@ -9,6 +9,8 @@ export interface MediaItem {
   alt?: string;
   caption?: string | React.ReactNode;
   link?: string;
+  videoType?: 'youtube';
+  hidden?: boolean;
 }
 
 interface PortfolioSectionProps {
@@ -18,7 +20,9 @@ interface PortfolioSectionProps {
 const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
   const mediaItems = section.projects.map(project => ({
     type: 'image' as const,
-    url: project.media[0].url,
+    url: project.id === 'cox-training' 
+      ? '/assets/learning-design/cox-training/Marissa Hart_Cox Sr. ID Assignment Video Condensed.png'
+      : project.media[0].url,
     alt: project.title,
     caption: project.title,
     link: `/projects/${project.id}`
@@ -91,10 +95,12 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ section }) => {
               >
                 {item.link ? (
                   <Link to={item.link} className="block h-full w-full hover:opacity-90 transition-opacity">
-                    <div 
-                      className="relative h-full w-full bg-cover bg-center"
-                      style={{ backgroundImage: `url(${item.url})` }}
-                    >
+                    <div className="relative h-full w-full">
+                      <img
+                        src={item.url}
+                        alt={item.alt || ''}
+                        className="w-full h-full object-cover"
+                      />
                       {item.caption && (
                         <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
                           <p className="text-sm">{item.caption}</p>
