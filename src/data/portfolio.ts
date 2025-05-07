@@ -68,21 +68,34 @@ export const portfolioData: PortfolioSection[] = [
         ],
         media: [
           {
-            type: 'image' as const,
-            url: 'https://placehold.co/1200x600/009345/ffffff?text=Perfect+Margarita+Module',
-            alt: 'Perfect Margarita eLearning Module',
-            caption: 'Interactive Learning Module Interface'
+            type: 'image',
+            url: '/assets/learning-design/perfect-margarita/Title Slide.jpg',
+            alt: 'Perfect Margarita Title Slide',
+            caption: 'Title Slide'
           },
           {
-            type: 'image' as const,
-            url: 'https://placehold.co/1200x600/009345/ffffff?text=Ingredient+Selection',
-            alt: 'Ingredient Selection Screen',
-            caption: 'Interactive Ingredient Selection Exercise'
+            type: 'image',
+            url: '/assets/learning-design/perfect-margarita/Key Ingredients.jpg',
+            alt: 'Key Ingredients for Perfect Margarita',
+            caption: 'Key Ingredients'
           },
           {
-            type: 'video' as const,
-            url: '/videos/margarita-mixing.mp4',
-            caption: 'Mixing Technique Demonstration'
+            type: 'image',
+            url: '/assets/learning-design/perfect-margarita/Steps.jpg',
+            alt: 'Steps to Create Perfect Margarita',
+            caption: 'Steps'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/perfect-margarita/KC.jpg',
+            alt: 'Knowledge Check',
+            caption: 'Knowledge Check'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/perfect-margarita/Congrats.jpg',
+            alt: 'Completion Screen',
+            caption: 'Completion Screen'
           }
         ],
         skills: [
@@ -101,10 +114,46 @@ export const portfolioData: PortfolioSection[] = [
         description: 'A comprehensive training program for new employees on company processes and procedures.',
         media: [
           {
-            type: 'image' as const,
-            url: 'https://placehold.co/1200x600/009345/ffffff?text=REV+101',
+            type: 'image',
+            url: '/assets/learning-design/rev-101/REV 101.jpg',
             alt: 'REV 101 Training Module',
             caption: 'REV 101 Training Interface'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/rev-101/Slide1.jpeg',
+            alt: 'Slide 1',
+            caption: 'Introduction'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/rev-101/Slide2.jpeg',
+            alt: 'Slide 2',
+            caption: 'Overview'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/rev-101/Slide3.jpeg',
+            alt: 'Slide 3',
+            caption: 'Key Concepts'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/rev-101/Slide4.jpeg',
+            alt: 'Slide 4',
+            caption: 'Process Steps'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/rev-101/Slide5.jpeg',
+            alt: 'Slide 5',
+            caption: 'Best Practices'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/rev-101/Slide6.jpeg',
+            alt: 'Slide 6',
+            caption: 'Summary'
           }
         ],
         skills: [
@@ -122,10 +171,52 @@ export const portfolioData: PortfolioSection[] = [
         description: 'A comprehensive training program for brand ambassadors, focusing on product knowledge and customer engagement.',
         media: [
           {
-            type: 'image' as const,
-            url: 'https://placehold.co/1200x600/009345/ffffff?text=Ambassador',
-            alt: 'Ambassador Training Materials',
-            caption: 'Training Materials and Resources'
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/Opening 1.jpeg',
+            alt: 'Training Opening',
+            caption: 'Training Opening'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/Engagement 2.jpeg',
+            alt: 'Engagement Strategies',
+            caption: 'Engagement Strategies'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/Personal Motivation 3.jpeg',
+            alt: 'Personal Motivation',
+            caption: 'Personal Motivation'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/Learner Motivation 4.jpeg',
+            alt: 'Learner Motivation',
+            caption: 'Learner Motivation'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/Associate Motivation 5.jpeg',
+            alt: 'Associate Motivation',
+            caption: 'Associate Motivation'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/How to Coach 6.jpeg',
+            alt: 'How to Coach',
+            caption: 'How to Coach'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/How to Give Feedback 7.jpeg',
+            alt: 'How to Give Feedback',
+            caption: 'How to Give Feedback'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/ambassador-training/Feedback Examples 8.jpeg',
+            alt: 'Feedback Examples',
+            caption: 'Feedback Examples'
           }
         ],
         skills: [
@@ -143,10 +234,40 @@ export const portfolioData: PortfolioSection[] = [
         description: 'An interactive module teaching the STAR method for behavioral interview responses.',
         media: [
           {
-            type: 'image' as const,
-            url: 'https://placehold.co/1200x600/009345/ffffff?text=STAR+Method',
-            alt: 'STAR Method Training Module',
-            caption: 'STAR Method Training Interface'
+            type: 'image',
+            url: '/assets/learning-design/star-method/Title Slides 1.png',
+            alt: 'Title Slide',
+            caption: 'Title Slide'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/star-method/Learning Outcomes 2.png',
+            alt: 'Learning Outcomes',
+            caption: 'Learning Outcomes'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/star-method/What is the STAR method 3.png',
+            alt: 'What is the STAR Method',
+            caption: 'What is the STAR Method'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/star-method/Components of the STAR method 4.png',
+            alt: 'Components of the STAR Method',
+            caption: 'Components of the STAR Method'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/star-method/STAR Example 5.png',
+            alt: 'STAR Example',
+            caption: 'STAR Example'
+          },
+          {
+            type: 'image',
+            url: '/assets/learning-design/star-method/STAR Knowledge Check 6.png',
+            alt: 'STAR Knowledge Check',
+            caption: 'STAR Knowledge Check'
           }
         ],
         skills: [
